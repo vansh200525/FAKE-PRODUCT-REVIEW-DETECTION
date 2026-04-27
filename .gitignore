@@ -1,0 +1,50 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment files
+.env
+venv/
+.venv/
+
+# ML model files
+ml/models/*.pkl
+ml/models/*.h5
+
+# ML data folders
+ml/data/raw/
+ml/data/processed/
+
+# MLflow / experiment tracking
+mlruns/
+mlflow.db
+
+# Node modules
+node_modules/
+frontend/node_modules/
+
+# Frontend build files
+frontend/dist/
+dist/
+build/
+
+# VS Code settings
+.vscode/
+
+# System files
+*.DS_Store
+
+# Database files
+backend/history.db
+history.db
+
+# Python cache folders inside subfolders
+backend/__pycache__/
+ml/src/__pycache__/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

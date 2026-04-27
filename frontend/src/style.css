@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* THE SKY BLUE & MIDNIGHT THEME */
+  --bg-main: #080c14; /* Extremely deep, dark midnight blue */
+  --glass-bg: rgba(15, 23, 42, 0.65); /* Translucent dark slate */
+  --glass-border: rgba(56, 189, 248, 0.25); /* Glowing sky blue border */
+  --text-main: #f8fafc; 
+  --text-muted: #8b949e;
+  --sea-green: #38bdf8; /* Bright Sky Blue */
+  --sea-green-dark: #0284c7; /* Darker Sky Blue */
+  --sea-gradient: linear-gradient(135deg, #38bdf8, #0284c7); /* Sky Blue gradient */
+  --neon-red: #f43f5e;
+}
+
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow: hidden; 
+}
+
+/* =========================================
+   VISIBLE, FASTER BACKGROUND ANIMATIONS 
+   ========================================= */
+@keyframes drift1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20vw, 15vh) scale(1.2); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes drift2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-20vw, -15vh) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes drift3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30vw, -20vh) scale(1.3); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+/* The Glowing Orbs */
+.bg-glow-1, .bg-glow-2, .bg-glow-3 {
+  position: fixed; /* Ensures they stay completely in the background */
+  border-radius: 50%;
+  filter: blur(90px); /* Slightly less blur so they are more visible */
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-glow-1 {
+  width: 500px; height: 500px;
+  background: rgba(56, 189, 248, 0.25); /* Vibrant Sky Blue */
+  top: -50px; left: -50px;
+  animation: drift1 10s infinite ease-in-out;
+}
+
+.bg-glow-2 {
+  width: 600px; height: 600px;
+  background: rgba(2, 132, 199, 0.25); /* Deep Sky Blue */
+  bottom: -100px; right: -50px;
+  animation: drift2 12s infinite ease-in-out;
+}
+
+.bg-glow-3 {
+  width: 400px; height: 400px;
+  background: rgba(14, 165, 233, 0.2); /* Medium Sky Blue */
+  top: 40%; left: 30%;
+  animation: drift3 8s infinite ease-in-out;
+}
+
+/* Dashboard Layout */
+.dashboard-wrapper {
+  display: flex; height: 100vh; width: 100vw;
+  padding: 24px; box-sizing: border-box; gap: 30px;
+  position: relative; z-index: 1;
+}
+
+.main-content {
+  flex: 1; display: flex; flex-direction: column; gap: 30px;
+  overflow-y: auto; padding-right: 15px;
+}
+
+/* Dark Glass Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px; padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.05);
+  position: relative;
+}
+
+.topbar {
+  display: flex; justify-content: center; align-items: center;
+  padding: 15px 30px; border-radius: 100px;
+}
+
+/* Typography */
+.section-title {
+  font-size: 32px; font-weight: 700; margin: 0 0 10px 0;
+  letter-spacing: -0.5px; color: var(--text-main);
+}
+
+.sub-title {
+  color: var(--text-muted); font-size: 13px;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 20px; font-weight: 600;
+}
+
+/* Deep Dark Input Field */
+textarea {
+  width: 100%; height: 160px; padding: 20px;
+  border-radius: 16px; border: 1px solid rgba(255,255,255,0.1);
+  background: #04060a; color: var(--text-main);
+  font-family: 'Outfit', sans-serif; font-size: 15px; line-height: 1.6;
+  resize: none; box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+textarea:focus {
+  outline: none; border-color: var(--sea-green);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+/* Sky Blue Button */
+.btn-primary {
+  margin-top: 20px; padding: 16px 30px;
+  background: var(--sea-gradient); border: 1px solid var(--sea-green);
+  color: white; border-radius: 12px;
+  cursor: pointer; font-weight: 600; font-family: 'Outfit', sans-serif;
+  letter-spacing: 1px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%; text-transform: uppercase;
+  box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(14, 165, 233, 0.6);
+  background: #0284c7;
+}
+
+/* Results Grid */
+.results-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; margin-top: 10px; }
+.stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Dark Stat Boxes */
+.stat-box {
+  background: rgba(0,0,0,0.4); padding: 20px; border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.2s ease;
+}
+.stat-box:hover { transform: translateY(-2px); border-color: rgba(56, 189, 248, 0.3); }
+
+.stat-label { color: var(--text-muted); font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; }
+.stat-value { font-size: 28px; font-weight: 700; color: var(--text-main); }
+.stat-value.highlight { color: var(--sea-green); text-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
+
+.big-data { font-size: 48px; font-weight: 800; margin: 10px 0; display: flex; align-items: center; gap: 15px; }
+.fake-text { color: var(--neon-red); text-shadow: 0 0 20px rgba(244, 63, 94, 0.4); }
+.real-text { color: var(--sea-green); text-shadow: 0 0 20px rgba(56, 189, 248, 0.4); }
