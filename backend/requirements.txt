@@ -6,6 +6,6 @@ xgboost==2.0.3
 tensorflow==2.16.1
 nltk==3.8.1
 textblob==0.18.0
-numpy==1.26.4
+numpy==2.2.0
 pandas==2.2.1
 python-multipart==0.0.9
