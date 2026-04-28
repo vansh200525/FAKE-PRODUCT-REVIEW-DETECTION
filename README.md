@@ -211,8 +211,7 @@ Dehradun, Uttarakhand, India
 
 ---
 
-## License
+## Disclaimer
 
-This project is developed for academic and learning purposes.
+This project is developed for educational and research purposes only. We have used publicly available product reviews from Flipkart to analyze and detect fake reviews. No part of this project is intended for commercial use or to infringe on Flipkart’s rights. All trademarks and product information belong to their respective owners. If required, we are willing to remove any data or content upon request.
 
----
