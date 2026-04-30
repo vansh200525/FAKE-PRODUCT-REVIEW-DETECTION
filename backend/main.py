@@ -1,8 +1,3 @@
-# backend/main.py
-# FastAPI Backend
-# HOW TO RUN:
-# uvicorn main:app --reload --port 8000
-
 import json
 import os
 import sys
